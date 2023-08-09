@@ -1,0 +1,1797 @@
+@charset "UTF-8";
+
+.clearfix::after{
+    content: ""; display: block; clear: both;
+}
+.splitting .char {
+    animation: slide-in 1s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(60ms * var(--char-index));
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-1em) rotate(-.5turn) scale(0.5);
+        opacity: 0;
+    }
+}
+
+
+/* header */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 10px;
+    margin: 0 50px;
+    position: fixed;
+    width: calc(100% - 100px);
+    box-sizing: border-box;
+    border-bottom: 2px solid;
+    font-size: 18px;
+    background: #ffffffad;
+    z-index: 10;
+    transition: .3s;
+}
+
+header.on {
+    background: #fff;
+}
+
+header>div {
+    width: 33.33%;
+}
+
+header .header_left_txt {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+header .header_mail {
+    text-align: center;
+}
+
+header .header_menu {
+    text-align: right;
+}
+
+.head_title {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 700;
+    background: linear-gradient(to top, #ffd951 50%, transparent 50%);
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+header .nav_toggle {
+    display: block;
+    background-color: transparent;
+    color: #000;
+    outline: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    width: 2rem;
+    height: 1.4rem;
+    position: relative;
+    float: right;
+}
+
+header .nav_toggle .nav_icon {
+    width: 2rem;
+    height: 1.4rem;
+    position: relative;
+}
+
+header .nav_toggle .nav_icon span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    display: block;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+header .nav_toggle .nav_icon span:nth-of-type(1) {
+    top: 0;
+}
+
+header .nav_toggle .nav_icon span:nth-of-type(2) {
+    top: 45%;
+}
+
+header .nav_toggle .nav_icon span:nth-of-type(3) {
+    bottom: 0;
+}
+
+header .nav_toggle.on .nav_icon span:nth-of-type(1) {
+    -webkit-transform: translateY (0.9rem) rotate (-45deg);
+    transform: translateY(0.9rem) rotate(-45deg);
+}
+
+header .nav_toggle.on .nav_icon span:nth-of-type(2) {
+    opacity: 0;
+}
+
+header .nav_toggle.on .nav_icon span:nth-of-type(3) {
+    -webkit-transform: translateY(-0.4rem) rotate(45deg);
+    transform: translateY(-0.4rem) rotate(45deg);
+}
+
+header .nav_toggle+.toggle_menu {
+    /* display: none; */
+    position: absolute;
+    top: 88px;
+    right: -350px;
+    background: #fff;
+    border-left: 2px solid #000;
+    height: 100vh;
+    width: 300px;
+    text-align: left;
+    padding: 50px 30px;
+    box-sizing: border-box;
+    transition: .3s;
+}
+
+header .nav_toggle.on+.toggle_menu {
+    right: -50px;
+
+}
+
+header .nav_toggle+.toggle_menu ul.menu_list li:nth-child(n + 2) {
+    margin-top: 20px;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    line-height: 1.8;
+    border-top: 1px solid #000;
+    font-weight: 700;
+    color: #999;
+}
+
+.content section {
+    padding: 100px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.content section.visual {
+    padding: 0;
+    overflow: hidden;
+}
+
+.content section.visual .wrap {
+    position: relative;
+    height: 100vh;
+}
+
+.content section.visual .visu_title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.content section.visual .visu_title h5 {
+    font-size: 35px;
+}
+
+.content section.visual .visu_title h1 {
+    font-size: 220px;
+    line-height: 1;
+    font-weight: 900;
+    transition: .3s;
+    background: linear-gradient(to top, #ffd951 50%, transparent 50%);
+}
+
+.content section.visual .scroll {
+    position: absolute;
+    z-index: 1;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .3s;
+    filter: invert(1) contrast(1);
+}
+
+
+.content section.introduce .wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content section.introduce .intro_img {
+    width: 400px;
+    height: 600px;
+    border-radius: 10px;
+    flex: none;
+    box-shadow: 0px 0px 20px #00000041;
+}
+
+.content section.introduce .intro_txt {
+    margin-left: 80px;
+}
+
+.content section.introduce .intro_txt h3 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.content section.introduce .intro_txt span {
+    background: linear-gradient(to top, #ffd951 50%, transparent 50%)
+}
+
+.content section.introduce .intro_txt p {
+    font-size: 20px;
+    margin-top: 40px;
+    line-height: 1.6;
+}
+
+.content section.skill .skill_wrap {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.content section.skill .skill_wrap:nth-child(n + 2) {
+    margin-top: 100px;
+}
+
+.content section.skill .skill_tit {
+    width: 400px;
+    flex: none;
+    text-align: right;
+}
+
+.content section.skill .skill_tit h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.4;
+    position: relative;
+    top: -10px;
+}
+
+.content section.skill .skill_tit h2 span {
+    background: linear-gradient(to top, #ffd951 50%, transparent 50%)
+}
+
+.content section.skill .skill_list {
+    width: 100%;
+    margin-left: 80px;
+    font-size: 20px;
+}
+
+.content section.skill .skill_list li {
+    display: flex;
+}
+
+.content section.skill .skill_list li span.dot {
+    width: 20px;
+    flex: none;
+}
+
+.content section.skill .skill_list li:nth-child(n + 2) {
+    margin-top: 20px;
+}
+
+
+
+
+.skill .easypiechart {
+    background-color: #fff;
+    height: 30vh;
+    position: relative;
+    margin-top: 90px;
+}
+
+.skill .easypiechart .container {
+    width: 1200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.skill .easypiechart .container .box {
+    position: relative;
+    width: 25%;
+    height: 230px;
+}
+
+.skill .easypiechart .container .box .chart {
+    text-align: center;
+}
+
+.skill .easypiechart .container .box h2 {
+    text-align: center;
+    font-size: 25px;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.skill .easypiechart .container .box h3 {
+    position: absolute;
+    left: 50%;
+    top: 24%;
+    color: #666;
+    transform: translateX(-50%);
+    font-size: 48px;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+.skill .easypiechart .container .Skill_tit {
+    position: absolute;
+    width: 109px;
+    height: 60px;
+    left: 550px;
+    top: -79px;
+    font-size: 60px;
+    font-family: 'SUIT', sans-serif;
+    background: linear-gradient(to top, #ffd951 30%, transparent 35%);
+}
+
+
+
+
+.content section.project ul.portfo_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 30px;
+}
+
+.content section.project ul.portfo_list>li {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px #00000041;
+}
+
+.content section.project ul.portfo_list>li>a::after {
+    content: '';
+    display: inline-block;
+    padding-bottom: 80%;
+}
+
+.content section.project ul.portfo_list>li>a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    transition: .3s;
+    background-size: 100% !important;
+}
+
+.content section.project ul.portfo_list>li>a:hover {
+    background-size: 120% !important;
+}
+
+.content section.project ul.portfo_list>li>a .portfo_txt {
+    position: absolute;
+    /* left: 20px; */
+    bottom: 0px;
+    padding: 30px;
+    padding-top: 80px;
+    background: linear-gradient(#ffffff00, #000000cb);
+}
+
+
+
+
+.portfo_list .portfo_img .imac_mocku {
+    width: 600px;
+    height: 500px;
+}
+
+.portfo_list .portfo_img .imac_mocku img {
+    width: 800px;
+    height: 500px;
+    position: absolute;
+    left: -110px;
+    top: 97px;
+
+}
+
+.portfo_list .portfo_img .imac_mocku_img__01 {
+
+    width: 65%;
+    height: 22%;
+    position: absolute;
+    left: 108px;
+    top: 202px;
+    background: url(../images/port1.png) no-repeat;
+    background-size: 100%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+}
+
+.portfo_list .portfo_img .imac_mocku_img__01:hover {
+    background-position: bottom;
+}
+
+
+
+.portfo_list .portfo_img .ipad_mockup {}
+
+.portfo_list .portfo_img .ipad_mockup_img__01{
+    width: 30%;
+    height: 22%;
+    position: absolute;
+    left: 38px;
+    top: 400px;
+    background: url(../images/port1.png) no-repeat;
+    background-size: 100%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+    
+}
+
+.portfo_list .portfo_img .ipad_mockup_img__01:hover {
+    background-position: bottom;
+}
+
+
+
+
+.portfo_list .portfo_img .ipad_mockup_img img {
+    width: 137px;
+    height: 215px;
+    position: absolute;
+    left: 20px;
+    top: 400px;
+    object-fit: cover;
+}
+
+
+
+
+
+.portfo_list .portfo_img .ipad_mockup_img img:hover {
+    background-position: bottom;
+}
+
+
+.portfo_list .portfo_img .iphone_mockup img {
+    width: 313px;
+    height: 300px;
+    position: absolute;
+    left: 321px;
+    top: 375px;
+    object-fit: cover;
+
+}
+
+
+.portfo_list .portfo_img .iphone_mockup_img__01{
+    width: 21%;
+    height: 21%;
+    position: absolute;
+    left: 415px;
+    top: 424px;
+    background: url(../images/port1.png) no-repeat;
+    background-size: 100%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+
+
+}
+
+.portfo_list .portfo_img .iphone_mockup_img__01:hover {
+    background-position: bottom;
+}
+
+
+
+.portfo_list .portfo_img .imac_mocku {
+    width: 600px;
+    height: 500px;
+}
+
+.portfo_list .portfo_img .imac_mocku img {
+    width: 800px;
+    height: 500px;
+    position: absolute;
+    left: -110px;
+    top: 97px;
+    object-fit: cover;
+
+}
+
+
+
+.portfo_list .portfo_img .ipad_mockup_img img:hover {
+    background-position: bottom;
+}
+
+
+.portfo_list .portfo_img .iphone_mockup img {
+    width: 313px;
+    height: 300px;
+    position: absolute;
+    left: 321px;
+    top: 375px;
+    object-fit: cover;
+
+}
+
+
+.portfo_list .portfo_img .iphone_mockup_img img {
+    width: 116px;
+    height: 197px;
+    position: absolute;
+    left: 417px;
+    top: 429px;
+    object-fit: cover;
+
+}
+
+
+
+
+
+.portfo_list .portfo_img .imac_mocku {
+    width: 600px;
+    height: 500px;
+}
+
+.portfo_list .portfo_img .imac_mocku img {
+    width: 800px;
+    height: 500px;
+    position: absolute;
+    left: -110px;
+    top: 97px;
+    object-fit: cover;
+
+}
+
+.portfo_list .portfo_img .imac_mocku_img__02 {
+
+    width: 65%;
+    height: 22%;
+    position: absolute;
+    left: 108px;
+    top: 202px;
+    background: url(../images/port2.png) no-repeat;
+    background-size: 100%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+    
+}
+
+.portfo_list .portfo_img .imac_mocku_img__02:hover {
+    background-position: bottom;
+}
+
+.portfo_list .portfo_img .ipad_mockup {}
+
+.portfo_list .portfo_img .ipad_mockup img {
+    width: 250px;
+    height: 300px;
+    position: absolute;
+    left: -3px;
+    top: 359px;
+    object-fit: cover;
+}
+.portfo_list .portfo_img .ipad_mockup_img__02{
+    width: 29%;
+    height: 22%;
+    position: absolute;
+    left: 39px;
+    top: 400px;
+    background: url(../images/port2.png) no-repeat;
+    background-size: 100%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+}
+
+.portfo_list .portfo_img .ipad_mockup_img__02:hover {
+    background-position: bottom;
+}
+
+
+
+
+
+
+
+
+
+
+
+.portfo_list .portfo_img .ipad_mockup_img img:hover {
+    background-position: bottom;
+}
+
+
+.portfo_list .portfo_img .iphone_mockup img {
+    width: 313px;
+    height: 300px;
+    position: absolute;
+    left: 321px;
+    top: 375px;
+    object-fit: cover;
+}
+
+
+.portfo_list .portfo_img .iphone_mockup_img__02{
+    width: 20%;
+    height: 21%;
+    position: absolute;
+    left: 419px;
+    top: 424px;
+    background: url(../images/port2.png) no-repeat;
+    background-size: 100%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+}
+
+
+.portfo_list .portfo_img .iphone_mockup_img__02:hover {
+    background-position: bottom;
+}
+
+
+
+
+
+
+.content section.project ul.portfo_list>li>a .portfo_txt h2 {
+    font-size: 35px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.content section.project ul.portfo_list>li>a .portfo_txt p {
+    box-sizing: border-box;
+    color: #fff;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.content section.project ul.portfo_list>li:hover>a .portfo_txt p {
+    height: 100px;
+    opacity: 1;
+    visibility: visible;
+    padding-top: 15px;
+}
+
+.content section.project ul.portfo_list>li>a ul.tag {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.content section.project ul.portfo_list>li>a ul.tag li {
+    border: 1px solid #ffd951;
+    border-radius: 20px;
+    padding: 5px 10px;
+    color: #ffd951;
+
+}
+
+.content section.project ul.portfo_list>li>a ul.tag li:nth-child(n + 2) {
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content section.project ul.portfo_list>li>a ul.tag .Mobile:hover {
+    background-color: #ffd951;
+    color: #fff;
+}
+
+.content section.project ul.portfo_list>li>a ul.tag .tablet:hover {
+    background-color: #ffd951;
+    color: #fff;
+}
+
+.content section.project ul.portfo_list>li>a ul.tag .pc:hover {
+    background-color: #ffd951;
+    color: #fff;
+}
+
+
+
+.portfo_list .portfo_img .imac_mocku_img__03{
+   
+    width: 65%;
+    height: 22%;
+    position: absolute;
+    left: 108px;
+    top: 202px;
+    background: url(../images/port3.png) no-repeat;
+    background-size: 100%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+}
+
+
+
+.portfo_list .portfo_img .imac_mocku_img__03:hover {
+    background-position: bottom;
+}
+
+
+
+
+.portfo_list .portfo_img .ipad_mockup_img__03{
+    width: 31%;
+    height: 22%;
+    position: absolute;
+    left: 33px;
+    top: 403px;
+    background: url(../images/port3.png) no-repeat center top;
+    background-size: 150%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+}
+
+
+.portfo_list .portfo_img .ipad_mockup_img__03:hover {
+    background-position: bottom;
+}
+
+.portfo_list .portfo_img .iphone_mockup_img__03{
+    width: 20%;
+    height: 21%;
+    position: absolute;
+    left: 418px;
+    top: 422px;
+    background: url(../images/port3.png) no-repeat center top;
+    background-size: 200%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+}
+
+.portfo_list .portfo_img .iphone_mockup_img__03:hover {
+    background-position: bottom;
+}
+
+
+
+
+.portfo_list .portfo_img .imac_mocku_img__04 {
+   
+    width: 65%;
+    height: 22%;
+    position: absolute;
+    left: 108px;
+    top: 202px;
+    background: url(../images/port4.png) no-repeat;
+    background-size: 100%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+}
+
+
+
+.portfo_list .portfo_img .imac_mocku_img__04:hover {
+    background-position: bottom;
+}
+
+
+
+
+
+.portfo_list .portfo_img .ipad_mockup_img__04{
+    width: 30%;
+    height: 21%;
+    position: absolute;
+    left: 38px;
+    top: 411px;
+    background: url(../images/port4.png) no-repeat top center;
+    background-size: 300%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+}
+
+
+.portfo_list .portfo_img .ipad_mockup_img__04:hover {
+    background-position: bottom;
+}
+
+
+
+
+
+.portfo_list .portfo_img .iphone_mockup_img__04{
+    width: 20%;
+    height: 22%;
+    position: absolute;
+    left: 419px;
+    top: 426px;
+    background: url(../images/port4.png) no-repeat top center;
+    background-size: 400%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+}
+
+
+.portfo_list .portfo_img .iphone_mockup_img__04:hover {
+    background-position: bottom;
+}
+
+
+
+
+
+.portfo_list .portfo_img .imac_mocku_img__05{
+    width: 65%;
+    height: 22%;
+    position: absolute;
+    left: 108px;
+    top: 202px;
+    background: url(../images/port5.png) no-repeat top;
+    background-size: 100%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+}
+
+
+
+.portfo_list .portfo_img .imac_mocku_img__05:hover {
+    background-position: bottom;
+}
+
+
+
+
+.portfo_list .portfo_img .ipad_mockup_img__05{
+    width: 29%;
+    height: 21%;
+    position: absolute;
+    left: 40px;
+    top: 407px;
+    background: url(../images/port5.png) no-repeat top;
+    background-size: 150%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+}
+
+
+
+.portfo_list .portfo_img .ipad_mockup_img__05:hover {
+    background-position: bottom;
+}
+
+
+
+
+
+
+.portfo_list .portfo_img .iphone_mockup_img__05{
+    width: 20%;
+    height: 21%;
+    position: absolute;
+    left: 419px;
+    top: 427px;
+    background: url(../images/port5.png) no-repeat top center;
+    background-size: 180%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+}
+
+
+
+.portfo_list .portfo_img .iphone_mockup_img__05:hover {
+    background-position: bottom;
+}
+
+
+
+
+
+.portfo_list .portfo_img .imac_mocku_img__06 {
+
+    width: 65%;
+    height: 22%;
+    position: absolute;
+    left: 108px;
+    top: 202px;
+    background: url(../images/port6.png) no-repeat;
+    background-size: 100%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+}
+
+
+
+
+.portfo_list .portfo_img .imac_mocku_img__06:hover {
+    background-position: bottom;
+}
+
+
+
+
+
+
+.portfo_list .portfo_img .ipad_mockup_img__06{
+    width: 28%;
+    height: 22%;
+    position: absolute;
+    left: 42px;
+    top: 401px;
+    background: url(../images/port6.png) no-repeat top;
+    background-size: 100%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+}
+
+
+
+.portfo_list .portfo_img .ipad_mockup_img__06:hover {
+    background-position: bottom;
+}
+
+
+
+
+
+
+.portfo_list .portfo_img .iphone_mockup_img__06{
+    width: 20%;
+    height: 21%;
+    position: absolute;
+    left: 418px;
+    top: 426px;
+    background: url(../images/port6.png) no-repeat top;
+    background-size: 100%;
+    background-position: top;
+    overflow: hidden;
+    transition: 2s;
+}
+
+
+
+.portfo_list .portfo_img .iphone_mockup_img__06:hover {
+    background-position: bottom;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.content section.contact .wrap{}
+
+.content section.contact .text_ani{
+    position: relative;
+    left: -50px;
+    width: 50%; float: left;
+}
+
+.content section.contact .contact_txt {
+    /* margin-right: 80px; */
+    width: 50%; float: left;
+    margin-bottom: 80px;
+}
+
+.content section.contact .contact_txt h3 {
+    font-size: 43px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.content section.contact .contact_txt span {
+    background: linear-gradient(to top, #ffd951 50%, transparent 50%)
+}
+
+.content section.contact .contact_txt p {
+    font-size: 20px;
+    margin-top: 40px;
+    line-height: 1.6;
+}
+
+.content section.contact .contact_txt .btns {
+    display: flex;
+    align-items: center;
+}
+
+.content section.contact .contact_txt .btns .anim-btn:nth-child(n + 2) {
+    margin-left: 20px;
+}
+
+/* 버튼 애니메이션 구현 */
+.anim-btn {
+    width: max-content;
+    position: relative;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+.anim-btn__button {
+    display: inline-block;
+    padding: 16px 32px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #000;
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    /* text-transform: uppercase; */
+    transition: color 300ms ease, transform 300ms ease;
+
+    &:hover,
+    &:focus {
+        color: #000;
+        cursor: pointer;
+    }
+
+    &:hover+.anim-btn__overlay,
+    &:focus+.anim-btn__overlay {
+        transform: translateY(calc(-100% + 2px));
+    }
+
+    &:active {
+        transform: scale(0.8);
+    }
+
+    &:active+.anim-btn__overlay {
+        transform: translateY(calc(-100% + 2px)) scale(0.8);
+    }
+}
+
+.anim-btn__overlay {
+    background-color: #ffd951;
+    height: calc(100% + 2px);
+    width: 100%;
+    position: absolute;
+    bottom: calc(-100% - 2px);
+    left: 0;
+    z-index: -1;
+    transition: transform 300ms ease;
+}
+
+
+/* 움직이는 텍스트 */
+.animated-title {
+    font-size: 60px;
+    font-weight: 300;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 50px 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.animated-title.one {
+    position: absolute;
+    bottom: 80px;
+    /* border-top: 2px solid #000; */
+}
+
+.animated-title.two {
+    position: absolute;
+    bottom: 0px;
+    /* border-top: 2px solid #000; */
+    border-bottom: 2px solid #000;
+}
+
+.animated-title .track_01 {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 15s linear infinite;
+}
+
+.animated-title.two .track_01 {
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (hover: hover) and (min-width: 700px) {
+    .animated-title .content {
+        -webkit-transform: translateY(calc(100% - 8rem));
+        transform: translateY(calc(100% - 8rem));
+    }
+}
+
+.scroll_down {
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+    z-index: 8;
+}
+
+.scroll_down i {
+    position: relative;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+    height: 50px;
+    width: 30px;
+    line-height: 60px;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+}
+
+.scroll_down i:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: -1;
+    transition: all .2s;
+}
+
+.arrow-down::before {
+    content: '\2304';
+    font-style: normal;
+    font-size: 20px;
+    line-height: 0;
+}
+
+.animated {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bounce {
+
+    0%,
+    100% {
+        -webkit-transform: translateY(0);
+    }
+
+    50% {
+        -webkit-transform: translateY(-10px);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.bounce {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+}
+
+
+
+@keyframes rotate_image {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@media screen and (max-width: 1300px) {
+    header {
+        margin: 0 20px;
+        width: calc(100% - 40px);
+    }
+
+    .content section.visual .scroll {
+        right: 20px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    /* .content section.visual .scroll{
+        display: none;
+    } */
+    header {
+        /* margin: 0 20px;
+        width: calc(100% - 40px); */
+        margin: 0;
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .content section.introduce .intro_txt {
+        margin-left: 40px;
+    }
+
+    .content section.skill .skill_list {
+        margin-left: 40px;
+    }
+
+    .portfo_list .portfo_img .imac_mocku_img {
+        width: 67%;
+    }
+
+    .portfo_list .portfo_img .imac_mocku_img_01 {
+        width: 67%;
+    }
+
+    .portfo_list .portfo_img .imac_mocku_img_02 {
+        width: 67%;
+    }
+
+    .portfo_list .portfo_img .imac_mocku_img_03 {
+        width: 67%;
+    }
+
+    .portfo_list .portfo_img .imac_mocku_img_04 {
+        width: 67%;
+    }
+
+    .portfo_list .portfo_img .imac_mocku_img_05 {
+        width: 67%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .content section.visual .visu_title h1 {
+        font-size: 160px;
+    }
+
+    .content section.introduce .intro_img {
+        width: 250px;
+        height: 350px;
+    }
+
+    .content section.skill .skill_tit {
+        width: 250px;
+    }
+
+    .content section.introduce .intro_txt h3 {
+        font-size: 36px;
+    }
+
+    .content section.skill .skill_tit h2 {
+        font-size: 36px;
+    }
+
+    .portfo_list .portfo_img .imac_mocku img {
+        position: absolute;
+        left: -171px;
+        top: 16px;
+    }
+
+    .portfo_list .portfo_img .imac_mocku_img_01 {
+        width: 79%;
+        height: 23%;
+        position: absolute;
+        left: 51px;
+        top: 125px;
+    }
+
+    .portfo_list .portfo_img .ipad_mockup img {
+        position: absolute;
+        left: -3px;
+        top: 330px;
+    }
+
+    .portfo_list .portfo_img .ipad_mockup_img img {
+        position: absolute;
+        left: 46px;
+        top: 368px;
+    }
+
+    .portfo_list .portfo_img .iphone_mockup img {
+        position: absolute;
+        left: 210px;
+        top: 337px;
+    }
+
+    .portfo_list .portfo_img .iphone_mockup_img img {
+        position: absolute;
+        left: 306px;
+        top: 387px;
+    }
+
+    .portfo_list .portfo_img .imac_mocku_img {
+        width: 82%;
+        height: 24%;
+        position: absolute;
+        left: 44px;
+        top: 123px;
+    }
+
+    .portfo_list .portfo_img .imac_mocku_img_02 {
+        width: 80%;
+        height: 24%;
+        position: absolute;
+        left: 47px;
+        top: 122px;
+    }
+
+    .portfo_list .portfo_img .imac_mocku_img_03 {
+        width: 80%;
+        height: 24%;
+        position: absolute;
+        left: 48px;
+        top: 125px;
+    }
+
+    .portfo_list .portfo_img .imac_mocku_img_04 {
+        width: 80%;
+        height: 23%;
+        position: absolute;
+        left: 48px;
+        top: 126px;
+    }
+
+    .portfo_list .portfo_img .imac_mocku_img_05 {
+        width: 78%;
+        height: 23%;
+        position: absolute;
+        left: 53px;
+        top: 128px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .content section.introduce .wrap {
+        display: block;
+    }
+
+    .content section.introduce .intro_txt {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .content section.introduce .intro_img {
+        width: 390px;
+        height: 400px;
+    }
+
+    .content section.visual .visu_title h1 {
+        font-size: 140px;
+    }
+
+    .content section.skill .skill_wrap {
+        display: block;
+    }
+
+    .content section.skill .skill_list {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .content section.skill .skill_tit {
+        width: auto;
+        text-align: left;
+    }
+
+    .content section.project ul.portfo_list {
+        gap: 20px 20px;
+    }
+
+    .content section.project ul.portfo_list>li>a .portfo_txt h2 {
+        font-size: 28px;
+    }
+
+    .content section.contact .contact_txt .btns {
+        display: block;
+    }
+
+    .content section.contact .contact_txt .btns .anim-btn:nth-child(n + 2) {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .portfo_list .portfo_img .imac_mocku_img_01 {
+        width: 81%;
+        height: 21%;
+        position: absolute;
+        left: 34px;
+        top: 102px;
+    }
+
+    .portfo_list .portfo_img .imac_mocku img {
+        width: 600px;
+        height: 400px;
+        position: absolute;
+        left: -120px;
+        top: 16px;
+    }
+
+    .portfo_list .portfo_img .ipad_mockup img {
+        position: absolute;
+        left: 7px;
+        top: 281px;
+        width: 200px;
+        height: 300px;
+    }
+
+    .portfo_list .portfo_img .ipad_mockup_img img {
+        position: absolute;
+        left: 31px;
+        top: 319px;
+    }
+
+    .portfo_list .portfo_img .iphone_mockup img {
+        width: 200px;
+        height: 300px;
+        position: absolute;
+        left: 186px;
+        top: 278px;
+    }
+
+    .portfo_list .portfo_img .iphone_mockup_img img {
+        position: absolute;
+        left: 231px;
+        top: 327px;
+        width: 104px;
+        height: 200px;
+    }
+
+    .portfo_list .portfo_img .imac_mocku_img {
+        width: 80%;
+        height: 21%;
+        position: absolute;
+        left: 37px;
+        top: 101px;
+    }
+
+    .portfo_list .portfo_img .imac_mocku_img_02{
+        width: 81%;
+    height: 20%;
+    position: absolute;
+    left: 36px;
+    top: 103px;
+    }
+    .portfo_list .portfo_img .imac_mocku_img_03 {
+        width: 80%;
+        height: 24%;
+        position: absolute;
+        left: 38px;
+        top: 104px;
+    }
+    .portfo_list .portfo_img .imac_mocku_img_04 {
+        width: 80%;
+        height: 20%;
+        position: absolute;
+        left: 39px;
+        top: 103px;
+    }
+    .portfo_list .portfo_img .imac_mocku_img_05 {
+        width: 80%;
+        height: 20%;
+        position: absolute;
+        left: 38px;
+        top: 104px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .content section.visual .visu_title h5 {
+        font-size: 30px;
+    }
+
+    .content section.visual .visu_title h1 {
+        font-size: 120px;
+    }
+
+    .content section.project ul.portfo_list {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    header>div {
+        width: 50%;
+    }
+
+    header .header_left_txt {
+        width: 70%;
+    }
+
+    header .header_mail {
+        display: none;
+    }
+
+    header .nav_toggle+.toggle_menu {
+        top: 68px;
+    }
+
+    .head_title {
+        margin: 0;
+        margin-bottom: 50px;
+    }
+
+    .animated-title {
+        padding: 90px 0;
+    }
+
+    .animated-title {
+        font-size: 48px;
+    }
+    .portfo_list .portfo_img .imac_mocku img {
+        width: 900px;
+        height: 600px;
+        position: absolute;
+        left: -127px;
+        top: 16px;
+    }
+    .portfo_list .portfo_img .imac_mocku_img_01 {
+        width: 69%;
+        height: 25%;
+        position: absolute;
+        left: 100px;
+        top: 139px;
+   
+    }
+
+    .portfo_list .portfo_img .ipad_mockup img {
+        position: absolute;
+        left: 11px;
+        top: 303px;
+        width: 200px;
+        height: 300px;
+    }
+    .portfo_list .portfo_img .ipad_mockup_img img {
+        position: absolute;
+        left: 35px;
+        top: 344px;
+    }
+    .portfo_list .portfo_img .iphone_mockup img {
+        width: 200px;
+        height: 300px;
+        position: absolute;
+        left: 421px;
+        top: 300px;
+    }
+    .portfo_list .portfo_img .iphone_mockup_img img {
+        position: absolute;
+        left: 467px;
+        top: 350px;
+        width: 104px;
+        height: 200px;
+    }
+    .portfo_list .portfo_img .imac_mocku_img {
+        width: 69%;
+        height: 25%;
+        position: absolute;
+        left: 101px;
+        top: 141px;
+    }
+    .portfo_list .portfo_img .imac_mocku_img_02 {
+        width: 68%;
+        height: 24%;
+        position: absolute;
+        left: 105px;
+        top: 145px;
+    
+    }
+    .portfo_list .portfo_img .imac_mocku_img_03 {
+        width: 69%;
+        height: 25%;
+        position: absolute;
+        left: 103px;
+        top: 144px;
+    }
+    .portfo_list .portfo_img .imac_mocku_img_04 {
+        width: 69%;
+        height: 25%;
+        position: absolute;
+        left: 103px;
+        top: 141px;
+    }
+    .portfo_list .portfo_img .imac_mocku_img_05 {
+        width: 68%;
+        height: 24%;
+        position: absolute;
+        left: 105px;
+        top: 142px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .content section.visual .visu_title h1 {
+        font-size: 100px;
+    }
+    .portfo_list .portfo_img .imac_mocku img {
+        width: 900px;
+        height: 600px;
+        position: absolute;
+        left: -177px;
+        top: -3px;
+    }
+    .portfo_list .portfo_img .imac_mocku_img_01 {
+        width: 78%;
+        height: 26%;
+        position: absolute;
+        left: 62px;
+        top: 127px;
+    }
+    .portfo_list .portfo_img .iphone_mockup img{
+        width: 200px;
+        height: 300px;
+        position: absolute;
+        left: 368px;
+        top: 300px;
+    }
+    .portfo_list .portfo_img .iphone_mockup_img img {
+        position: absolute;
+        left: 414px;
+        top: 352px;
+        width: 104px;
+        height: 200px;
+    }
+    .portfo_list .portfo_img .imac_mocku_img {
+        width: 79%;
+        height: 26%;
+        position: absolute;
+        left: 58px;
+        top: 127px;
+    }
+    .portfo_list .portfo_img .imac_mocku_img_02 {
+        width: 79%;
+        height: 26%;
+        position: absolute;
+        left: 57px;
+        top: 128px;
+    }
+    .portfo_list .portfo_img .imac_mocku_img_03 {
+        width: 80%;
+        height: 26%;
+        position: absolute;
+        left: 56px;
+        top: 126px;
+    }
+    .portfo_list .portfo_img .imac_mocku_img_04 {
+        width: 80%;
+        height: 26%;
+        position: absolute;
+        left: 56px;
+        top: 127px;
+    }
+    .portfo_list .portfo_img .imac_mocku_img_05 {
+        width: 79%;
+        height: 26%;
+        position: absolute;
+        left: 57px;
+        top: 127px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .content section.introduce .intro_img {
+        width: 100%;
+    }
+
+    .content section.visual .visu_title h5 {
+        font-size: 25px;
+    }
+
+    .content section.visual .visu_title h1 {
+        font-size: 80px;
+    }
+
+    .content section {
+        padding: 50px 0;
+    }
+
+    .animated-title {
+        font-size: 40px;
+    }
+
+    .animated-title {
+        padding: 80px 0;
+    }
+
+    /* .content section.introduce .intro_txt h3 br{
+        display: none;
+    } */
+
+    /* 전체적으로 줄이기 */
+    .content section.introduce .intro_txt h3 {
+        font-size: 28px;
+    }
+
+    .content section.skill .skill_tit h2 {
+        font-size: 28px;
+    }
+
+    .content section.contact .contact_txt h3 {
+        font-size: 28px;
+    }
+
+    .head_title {
+        font-size: 28px;
+    }
+
+    .content section.introduce .intro_txt p {
+        font-size: 18px;
+    }
+
+    .content section.skill .skill_list {
+        font-size: 18px;
+    }
+
+    .content section.contact .contact_txt p {
+        font-size: 18px;
+    }
+
+    .anim-btn__button {
+        font-size: 18px;
+    }
+
+    footer {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .content section.visual .visu_title h5 {
+        font-size: 22px;
+    }
+
+    .content section.visual .visu_title h1 {
+        font-size: 65px;
+    }
+
+}
