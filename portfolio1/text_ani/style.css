@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.top{height:100vh}
+
+
+#page1{width: 780px;
+    padding-top: 100px;}
+#page2-circle {
+    font-size: 4px;
+    pointer-events: none;
+    text-rendering: optimizeSpeed;
+    shape-rendering: optimizeSpeed;
+}
+
+#page2-circle {
+   width: 379px; height: 379px;
+    border-radius: 50%;
+    background-color: #B1C0A0;
+    position: relative;
+    left: 30%;
+    top:0;
+    transform: translate(-50%, 0);
+  font-size:4px;
+}
+#page2-circle video {
+    width: 276px; height: 332px;
+    rotate: -8deg;
+    position: absolute;
+    left: -20%;
+    top: -16%;
+}
+
+#page2-circle img {
+    width: 236px;
+    height: 296px;
+    rotate: 8deg;
+    position: absolute;
+    left: 46%;
+    top: 4%;
+}
+
+.snake__snake {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    /* z-index: 1; */
+    width: 1085px;
+    height: 750px;
+    position: absolute;
+    display: block;
+    left: -41%;
+    top: -40px;
+    text-rendering: optimizeSpeed;
+    shape-rendering: optimizeSpeed;
+  font-size:0.7em
+}
